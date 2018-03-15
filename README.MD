@@ -38,6 +38,9 @@ node app.js --help
 
 Connect to the websocket on port 40510
 
+## Known bugs
+- Reopening a websocket client without restarting the application causes a crash at first serialport input
+
 ## Built With
 
 * [Express](https://expressjs.com/) - The web framework used
