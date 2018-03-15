@@ -28,8 +28,7 @@ wss.on('connection', websocket.openConnection)
 app.listen(3000, () => {
     let selectedPortAsArg = cnsl.handleArguments()
     Logger.applicationStarted(3000)        
-    if (selectedPortAsArg) {
-        Logger.applicationStarted(3000)            
+    if (selectedPortAsArg) {      
         Logger.log("Attempting to open connection to: " + selectedPortAsArg)
         cnsl.selectSerialPort(selectedPortAsArg)
     }
