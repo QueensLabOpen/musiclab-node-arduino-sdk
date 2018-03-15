@@ -35,9 +35,9 @@ Connect to the websocket on port 40510
 ## Built With
 
 * [Express](https://expressjs.com/) - The web framework used
-* [ws](https://github.com/websockets/ws) - Dependency Management
-* [Node Serialport](https://node-serialport.github.io/node-serialport/) - Used to generate RSS Feeds
+* [ws](https://github.com/websockets/ws) - Websocket
+* [Node Serialport](https://node-serialport.github.io/node-serialport/) - Used to listen to a serial port
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License
