@@ -21,13 +21,19 @@ node app.js
 Available serial ports on the machine running the code can be listed at
 
 ```
-/devices  #GET
+node app.js --list
 ```
 
 To select the port you want to use 
 
 ```
-/devices/select #POST { comName: 'your-port' }
+node app.js --select comName
+```
+
+To list available commands
+
+```
+node app.js --help 
 ```
 
 Connect to the websocket on port 40510
