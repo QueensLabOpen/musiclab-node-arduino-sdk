@@ -15,11 +15,12 @@ function openConnection (ws) {
                     let buffer = ''                
                     
                     port.on('data', (data) => {
-                        buffer += data.toString()
+                        /* buffer += data.toString()
                         if (buffer.slice(-1) === ';') {
                             ws.send(buffer)
                             buffer = ''
-                        }
+                        } */
+                        ws.send(data.toString())
                     })
                 }
             })
@@ -29,6 +30,7 @@ function openConnection (ws) {
             let buffer = ''            
             port.on('data', (data) => {
                 buffer += data.toString()
+                Logger.log(buffer.toString())
                 if (buffer.slice(-1) === ';') {
                     ws.send(buffer)
                     buffer = ''
