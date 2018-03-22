@@ -3,6 +3,7 @@ const commandLineUsage = require('command-line-usage')
 const SerialPort = require('serialport')
 const Logger = require('../functions/logger')
 
+
 const helpSections = [
     {
         header: 'Queenslab Node Bridge',
@@ -81,7 +82,7 @@ function selectSerialPort (comName) {
             ports = response
             selectedPort = ports.find( port => port.comName === comName )
             if (selectedPort) {
-                port = new SerialPort(selectedPort.comName, { baudRate: 19200, autoOpen: false, parser: SerialPort.parsers.raw }, (error) => {
+                port = new SerialPort(selectedPort.comName, { baudRate: 9600, autoOpen: false, parser: SerialPort.parsers.raw }, (error) => {
                     
                 })
                 Logger.log("Started port listener. Websocket is now ready to connect on port 40510")

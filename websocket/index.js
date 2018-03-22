@@ -1,5 +1,5 @@
 const Logger = require('../functions/logger')
-
+var createInterface = require('readline').createInterface;
 
 function openConnection (ws) {
 
@@ -14,15 +14,21 @@ function openConnection (ws) {
                     Logger.log("Serial port opened and websocket connection ready to transmit")
                     let buffer = ''                
                     
-                    port.on('data', (data) => {
+                /*     port.on('data', (data) => {
                         /* buffer += data.toString()
                         if (buffer.slice(-1) === ';') {
                             ws.send(buffer)
                             buffer = ''
                         } */
-                        ws.send(data.toString())
-                    })
+                    // }) */
                 }
+
+                var lineReader = createInterface({
+                    input: port
+                })
+                lineReader.on('line', (line) => {
+                    ws.send(line)
+                }) 
             })
         } else {
             Logger.log("Using existing serialport. Websocket connection ready to transmit")
