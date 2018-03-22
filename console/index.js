@@ -81,7 +81,7 @@ function selectSerialPort (comName) {
             ports = response
             selectedPort = ports.find( port => port.comName === comName )
             if (selectedPort) {
-                port = new SerialPort(selectedPort.comName, { baudRate: 19200, autoOpen: false }, (error) => {
+                port = new SerialPort(selectedPort.comName, { baudRate: 19200, autoOpen: false, parser: SerialPort.parsers.raw }, (error) => {
                     
                 })
                 Logger.log("Started port listener. Websocket is now ready to connect on port 40510")
