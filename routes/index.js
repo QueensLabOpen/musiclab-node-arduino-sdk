@@ -23,7 +23,7 @@ function selectDevice (req, res) {
                 ports = response
                 selectedPort = ports.find( port => port.comName === req.body.comName )
                 if (selectedPort) {
-                    port = new SerialPort(selectedPort.comName, { baudRate: 9600, autoOpen: false }, (error) => {
+                    port = new SerialPort(selectedPort.comName, { baudRate: 19200, autoOpen: false }, (error) => {
                         
                     })
                     res.send("Started port listener. Websocket is now ready to connect on port 40510")

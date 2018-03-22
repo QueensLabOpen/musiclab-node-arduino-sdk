@@ -27,7 +27,7 @@ node app.js --list
 To select the port you want to use 
 
 ```
-node app.js --select comName
+node app.js --serialport comName
 ```
 
 To list available commands
